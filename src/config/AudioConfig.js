@@ -1,8 +1,8 @@
 export const AUDIO_FILES = {
-    BLASTER_SHOT: 'sounds/blaster_shot.wav',
-    EXPLOSION: 'sounds/explosion.flac',
-    MENU_SCROLL: 'sounds/menu_scroll.wav',
-    ROCKET_LAUNCH: 'sounds/rocket_launch.wav'
+    BLASTER_SHOT: 'blaster_shot.wav',
+    EXPLOSION: 'explosion.flac',
+    MENU_SCROLL: 'menu_scroll.wav',
+    ROCKET_LAUNCH: 'rocket_launch.wav'
 };
 
 export const AUDIO_SETTINGS = {

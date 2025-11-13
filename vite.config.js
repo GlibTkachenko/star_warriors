@@ -14,12 +14,8 @@ export default defineConfig({
     sourcemap: true,
     minify: 'terser',
     rollupOptions: {
-      output: {
-        manualChunks: {
-          'game-core': ['./src/core/Game.js', './src/core/GameObject.js'],
-          'game-systems': ['./src/systems/index.js'],
-          'game-entities': ['./src/entities/player/index.js', './src/entities/enemies/index.js']
-        }
+      input: {
+        main: './index.html'
       }
     }
   }
