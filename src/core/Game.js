@@ -213,31 +213,31 @@ export class Game {
     }
 
     handleMenuInput() {
-        const keys = this.inputManager.getKeys();
+        const keys = this.inputManager.getKeysPressed();
 
         if (this.currentState === GAME_STATES.MENU) {
             if (keys['ArrowDown']) {
                 this.selectedOption = (this.selectedOption + 1) % 2;
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['ArrowUp']) {
                 this.selectedOption = (this.selectedOption - 1 + 2) % 2;
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['Enter']) {
                 if (this.selectedOption === 0) {
                     this.currentState = GAME_STATES.MODE_SELECT;
                 } else {
                     window.location.href = 'instructions.html';
                 }
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             }
         }
         else if (this.currentState === GAME_STATES.MODE_SELECT) {
             if (keys['ArrowDown']) {
                 this.selectedModeOption = (this.selectedModeOption + 1) % 3;
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['ArrowUp']) {
                 this.selectedModeOption = (this.selectedModeOption - 1 + 3) % 3;
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['Enter']) {
                 if (this.selectedModeOption === 0) {
                     this.gameMode = GAME_MODES.NORMAL;
@@ -247,53 +247,53 @@ export class Game {
                     this.gameMode = GAME_MODES.DEREK;
                 }
                 this.currentState = GAME_STATES.SHIP_SELECT;
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['Escape']) {
                 this.currentState = GAME_STATES.MENU;
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             }
         }
         else if (this.currentState === GAME_STATES.SHIP_SELECT) {
             if (keys['ArrowDown']) {
                 this.selectedShipType = (this.selectedShipType + 1) % 3;
                 this.updateSelectedShipClass();
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['ArrowUp']) {
                 this.selectedShipType = (this.selectedShipType - 1 + 3) % 3;
                 this.updateSelectedShipClass();
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['Enter']) {
                 this.currentState = GAME_STATES.DIFFICULTY_SELECT;
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['Escape']) {
                 this.currentState = GAME_STATES.MODE_SELECT;
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             }
         }
         else if (this.currentState === GAME_STATES.DIFFICULTY_SELECT) {
             if (keys['ArrowDown']) {
                 this.selectedDifficulty = (this.selectedDifficulty + 1) % 2;
                 this.difficulty = this.selectedDifficulty === 0 ? 'easy' : 'hard';
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['ArrowUp']) {
                 this.selectedDifficulty = (this.selectedDifficulty - 1 + 2) % 2;
                 this.difficulty = this.selectedDifficulty === 0 ? 'easy' : 'hard';
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['Enter']) {
                 this.startGame();
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['Escape']) {
                 this.currentState = GAME_STATES.SHIP_SELECT;
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             }
         }
         else if (this.currentState === GAME_STATES.PAUSED) {
             if (keys['ArrowDown']) {
                 this.selectedPauseOption = (this.selectedPauseOption + 1) % 3;
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['ArrowUp']) {
                 this.selectedPauseOption = (this.selectedPauseOption - 1 + 3) % 3;
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['Enter']) {
                 if (this.selectedPauseOption === 0) {
                     this.currentState = GAME_STATES.PLAYING;
@@ -303,26 +303,26 @@ export class Game {
                 } else {
                     this.resetToMenu();
                 }
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['Escape']) {
                 this.currentState = GAME_STATES.PLAYING;
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             }
         }
         else if (this.currentState === GAME_STATES.GAME_OVER || this.currentState === GAME_STATES.VICTORY) {
             if (keys['ArrowDown']) {
                 this.gameOverOption = (this.gameOverOption + 1) % 2;
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['ArrowUp']) {
                 this.gameOverOption = (this.gameOverOption - 1 + 2) % 2;
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             } else if (keys['Enter']) {
                 if (this.gameOverOption === 0) {
                     this.startGame();
                 } else {
                     this.resetToMenu();
                 }
-                this.inputManager.reset();
+                this.inputManager.clearPressed();
             }
         }
     }
@@ -346,6 +346,7 @@ export class Game {
         this.selectedOption = 0;
         this.selectedModeOption = 0;
         this.selectedShipType = 0;
+        this.selectedShipClass = SHIP_TYPES.LIGHT_INTERCEPTOR;
         this.selectedDifficulty = 0;
         this.selectedPauseOption = 0;
         this.gameOverOption = 0;

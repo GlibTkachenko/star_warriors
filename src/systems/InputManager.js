@@ -4,6 +4,7 @@
 export class InputManager {
     constructor(canvas) {
         this.keys = {};
+        this.keysPressed = {};
         this.mousePressed = false;
         this.mouseX = 0;
         this.mouseY = 0;
@@ -14,11 +15,15 @@ export class InputManager {
 
     setupEventListeners() {
         window.addEventListener('keydown', (e) => {
+            if (!this.keys[e.key]) {
+                this.keysPressed[e.key] = true;
+            }
             this.keys[e.key] = true;
         });
 
         window.addEventListener('keyup', (e) => {
             this.keys[e.key] = false;
+            this.keysPressed[e.key] = false;
         });
 
         this.canvas.addEventListener('mousedown', (e) => {
@@ -61,8 +66,17 @@ export class InputManager {
         return this.keys;
     }
 
+    getKeysPressed() {
+        return this.keysPressed;
+    }
+
+    clearPressed() {
+        this.keysPressed = {};
+    }
+
     reset() {
         this.keys = {};
+        this.keysPressed = {};
         this.mousePressed = false;
     }
 
