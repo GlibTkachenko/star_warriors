@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Warriors - How to Play</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #111; 
+            color: #eee; 
+            line-height: 1.6;
+            padding: 20px;
+            display: flex; 
+            justify-content: center;
+            align-items: flex-start; 
+            min-height: 100vh; 
+        }
+        .container {
+            background-color: #222; 
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+        }
+        h1, h2 {
+            color: #00aaff; 
+            margin-bottom: 15px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        ul {
+            list-style: none; 
+            padding-left: 0; 
+            margin-bottom: 20px;
+        }
+        li {
+            background-color: #333;
+            margin-bottom: 8px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            border-left: 4px solid #00aaff;
+        }
+        li ul {
+            margin-top: 10px;
+            margin-bottom: 0; 
+            padding-left: 20px;
+        }
+        li ul li {
+            background-color: #444; 
+            border-left: 4px solid #ffaa00; 
+            font-size: 0.95em;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px 15px;
+            background-color: #0077cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .back-link:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Star Warriors Guide</h1>
+
+        <section>
+            <h2>Controls:</h2>
+            <ul>
+                <li>Arrow Keys or WASD: Move Ship</li>
+                <li>Spacebar: Shoot</li>
+                <li>Left click: Rocket/Bomb</li>
+                <li>B: Decoys</li>
+                <li>Escape: Pause / Resume Game</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Gameplay:</h2>
+            <ul>
+                <li>Survive waves of enemy ships.</li>
+                <li>Defeat the final boss.</li>
+                <li>Choose different ships and modes for varied gameplay.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Modes:</h2>
+            <ul>
+                <li>Normal: Standard health (3) and ammo.</li>
+                <li>Cheat: Invincible with unlimited ammo and super rockets.</li>
+                <li>Derek: Increased HP and damage, one-hit kills (except the boss).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Ships:</h2>
+            <ul>
+                <li>Light Interceptor: Fast, low health, no shields. Good fit if you are strong with the Force.</li>
+                <li>Interceptor: Balanced speed, health, and firepower, high shields. Good fit for an average human.</li>
+                <li>Bomber: Slow, high health, very high shields, powerful bombs with 2 mods:
+                    <ul>
+                        <li>Attack the closest enemy with 2 bombs.</li>
+                        <li>Attack two closest enemies with 1 bomb each.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Decoys:</h2>
+            <ul>
+                <li>Serve as bait for rockets and bombs.</li>
+                <li>Click 'B'/'b' to launch a decoy.</li>
+                <li>Cooldown: 1 sec, refresh: 3 sec.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Rockets/Bombs:</h2>
+            <ul>
+                <li>Rockets are fast with auto aim, damage: 3.</li>
+                <li>Bombs are slow, also with auto aim. Both bombs and rockets last for 10 seconds.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Astromechanic</h2>
+            <ul>
+                <li>Fixes the ship per fixed time of 3 seconds</li>
+            </ul>
+        </section>
+        <a href="index.html" class="back-link">Back to Game</a>
+    </div>
+</body>
+</html>
