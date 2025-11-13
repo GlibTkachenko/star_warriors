@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   base: '/star_warriors/', 
   root: './',
-  publicDir: 'sounds',
+  publicDir: 'public',
   server: {
     port: 3000,
     open: true
